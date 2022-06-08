@@ -16,7 +16,7 @@ dotenv.config({});
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://justchatting.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -45,7 +45,7 @@ mongoose
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://justchatting.vercel.app/",
     methods: ["GET", "POST"],
     credentials: true,
     transports: ["websocket", "polling"],
