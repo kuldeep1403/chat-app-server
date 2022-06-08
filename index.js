@@ -39,7 +39,7 @@ mongoose.connect(DB, {
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://justchatting.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
