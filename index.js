@@ -25,15 +25,13 @@ dotenv.config({
 });
 
 const DB = process.env.DATABASE_URL;
-console.log(DB);
 
-mongoose
-  .connect(DB, {
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("DB connection Success!");
+    console.log('DB connection Success!');
   })
   .catch((err) => {
     console.log(err);
@@ -41,7 +39,7 @@ mongoose
 
 const io = new Server(server, {
   cors: {
-    origin: "https://justchatting.vercel.app",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
     credentials: true,
   },
