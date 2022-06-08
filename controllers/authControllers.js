@@ -82,6 +82,7 @@ module.exports.login = async (req, res) => {
       });
     }
   } catch (err) {
+    console.log(err);
     const errors = handleErrors(err);
     res.json({ errors, status: false });
   }
