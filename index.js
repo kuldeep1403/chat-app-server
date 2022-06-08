@@ -12,7 +12,6 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
-dotenv.config({});
 app.use(cors());
 app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
 app.use(express.json());
@@ -21,7 +20,12 @@ app.use(morgan("dev"));
 app.use("/", authRoutes);
 app.use(express.urlencoded({ extended: true }));
 
+dotenv.config({
+  path: "./.env",
+});
+
 const DB = process.env.DATABASE_URL;
+console.log(DB);
 
 mongoose
   .connect(DB, {
