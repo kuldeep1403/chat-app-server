@@ -24,9 +24,7 @@ dotenv.config({
   path: "./.env",
 });
 
-const DB =
-  process.env.DATABASE_URL ||
-  "mongodb+srv://nick:Kuldeep1403@cluster0.vtvfh.mongodb.net/Auth?retryWrites=true&w=majority";
+const DB = process.env.DATABASE_URL;
 console.log(DB);
 
 mongoose
