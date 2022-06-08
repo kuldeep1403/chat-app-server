@@ -19,6 +19,10 @@ app.use(
     credentials: true,
   })
 );
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://justchatting.vercel.app/");
+  next();
+});
 app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
 app.use(express.json());
 app.use(cookieParser());
