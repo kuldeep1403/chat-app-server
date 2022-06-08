@@ -14,7 +14,7 @@ const bodyParser = require("body-parser");
 
 app.use(
   cors({
-    origin: ["https://justchatting.vercel.app"],
+    origin: ["https://justchatting.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
   })
