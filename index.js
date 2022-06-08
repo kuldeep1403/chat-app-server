@@ -12,7 +12,14 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://justchatting.vercel.app/"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
 app.use(express.json());
 app.use(cookieParser());
