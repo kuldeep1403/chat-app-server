@@ -13,15 +13,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
 dotenv.config({});
-
-app.use(
-  cors({
-    origin: ["https://justchatting.vercel.app/"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
-
+app.use(cors());
 app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
 app.use(express.json());
 app.use(cookieParser());
