@@ -14,7 +14,9 @@ const bodyParser = require("body-parser");
 
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["https://justchatting.vercel.app/"],
+    methods: ["GET", "POST"],
+    credentials: true,
   })
 );
 
@@ -46,7 +48,9 @@ mongoose
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://justchatting.vercel.app/",
+    methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
