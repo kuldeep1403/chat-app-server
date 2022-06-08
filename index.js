@@ -10,7 +10,7 @@ const dotenv = require("dotenv");
 const authRoutes = require("./routes/AuthRoutes");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 
 dotenv.config({});
 
@@ -22,7 +22,7 @@ app.use(
   })
 );
 
-app.use(bodyParser.json({limit: '50mb', type: 'application/json'}));
+app.use(bodyParser.json({ limit: "50mb", type: "application/json" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
@@ -86,6 +86,10 @@ io.on("connection", (socket) => {
     const socketId = users[data.receiver].socketId;
     io.to(socketId).emit("new_message", data);
   });
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello world");
 });
 
 server.listen(port, () => {
