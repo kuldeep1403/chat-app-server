@@ -70,6 +70,7 @@ module.exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await UserModel.login(email, password);
+    console.log(user);
     if (user) {
       res.json({
         _id: user._id,
