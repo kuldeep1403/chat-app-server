@@ -68,10 +68,8 @@ module.exports.register = async (req, res) => {
 
 module.exports.login = async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
   try {
     const user = await UserModel.login(email, password);
-    console.log(user.username);
     if (user) {
       res.json({
         _id: user._id,
@@ -82,7 +80,6 @@ module.exports.login = async (req, res) => {
       });
     }
   } catch (err) {
-    console.log(err);
     const errors = handleErrors(err);
     res.json({ errors, status: false });
   }
