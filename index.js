@@ -50,7 +50,6 @@ const io = new Server(server, {
     origin: "https://justchatting.vercel.app/",
     methods: ["GET", "POST"],
     credentials: true,
-    transports: ["websocket", "polling"],
   },
 });
 
