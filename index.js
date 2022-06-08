@@ -41,7 +41,7 @@ mongoose
 
 const io = new Server(server, {
   cors: {
-    origin: "https://justchatting.vercel.app/",
+    origin: "https://justchatting.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
